@@ -350,7 +350,7 @@ class CAPSULE_PT_Selection(Panel):
             # TODO : Rename these awful variable names
             # Get the first collection pointer we need
             grp = None
-
+            gr = None
 
             collections = collection_utils.GetSelectedCollections()
             if len(collections) != 0:
@@ -601,9 +601,10 @@ class CAPSULE_PT_List(Panel):
 
             if len(scn.collection_list) > 0:
                 entry = scn.collection_list[scn.collection_list_index]
+            
+            if entry != None and entry.collection != None:
                 grp = entry.collection.CAPCol
                 gr = entry.collection
-                        
             
             if gr is not None:
                 group_options_list = layout.column(align= False)
